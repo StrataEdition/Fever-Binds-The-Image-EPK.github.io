@@ -1,0 +1,462 @@
+/* ======================================
+    GLOBAL
+====================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    font-family: 'Azeret Mono', monospace;
+    color: black;
+    overflow: hidden; /* desktop = static layout */
+    height: 100%;
+
+    /* BACKGROUND IMAGE */
+    background-color: white;
+    background-image: url("assets/background-image.jpg");
+    background-size: contain;          /* full image visible */
+    background-position: top center;   /* keep the top visible */
+    background-repeat: no-repeat;
+}
+
+/* ======================================
+    SCALE
+====================================== */
+:root {
+    --square-width: 2%;
+    --vertical-spacing: 180px;
+}
+
+/* ======================================
+    CURSOR
+====================================== */
+.text.clickable,
+.text[onclick] {
+    cursor: pointer;
+}
+
+/* ======================================
+    LINKS
+====================================== */
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.15s ease;
+}
+
+/* ======================================
+    UNIVERSAL SQUARES
+====================================== */
+.square,
+.nav-square,
+.bullet,
+.bottom-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+}
+
+/* ======================================
+    LANDING VIDEO
+====================================== */
+#landing-container {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 10;
+    cursor: pointer;
+}
+#landing-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ======================================
+    NAV (DESKTOP)
+====================================== */
+.nav {
+    width: 100%;
+    text-align: center;
+    margin-top: var(--vertical-spacing); 
+    position: relative;
+    z-index: 5;
+}
+
+.nav nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - (var(--square-width) * 2));
+    margin: 0 auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-square {
+    position: relative;
+    top: -1px;
+}
+
+.nav-item a:hover,
+nav a.active {
+    background: black;
+    color: white;
+}
+
+/* ======================================
+    CONTENT (DESKTOP)
+====================================== */
+.content {
+    position: absolute;
+    top: calc(var(--vertical-spacing) + 100px);
+    left: var(--square-width);
+    right: var(--square-width);
+    bottom: calc(var(--vertical-spacing) + 40px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.center-block {
+    text-align: left;
+}
+
+/* ======================================
+    RELEASE LIST (DESKTOP)
+====================================== */
+.release-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.release-list li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.bullet {
+    position: relative;
+    top: -1px;
+}
+
+/* ======================================
+    TEXT COLUMNS (DESKTOP)
+====================================== */
+.text {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#label .text > span,
+#artists .text > span,
+#events .text > span {
+    width: 200px;
+    display: inline-block;
+}
+
+#about .text > span {
+    width: auto;
+    display: inline;
+}
+
+.text.clickable:hover,
+.text.clickable:hover a {
+    background: black;
+    color: white;
+}
+
+/* ======================================
+    POPUP (DESKTOP)
+====================================== */
+#event-preview {
+    display: none;
+    position: absolute;
+    top: calc(20% + 20px); 
+    left: 50%;
+    transform: translateX(-55%);
+    z-index: 100;
+    padding-bottom: 100px; 
+}
+
+.preview-box {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    align-items: flex-start;
+    max-height: calc(100vh - 220px); 
+    overflow-y: auto;
+    padding-right: 10px; 
+}
+
+.preview-box img {
+    width: 300px;
+    object-fit: cover;
+}
+
+.preview-details {
+    width: 340px;
+    line-height: 1.4;
+}
+
+.preview-videos {
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.preview-videos iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+/* GLOBAL LABEL STYLE */
+.event-label {
+    background: black;
+    color: white;
+    padding: 0;
+    line-height: 1em;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* ======================================
+    SHOP GALLERY
+====================================== */
+.shop-gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.shop-item {
+    width: 300px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-item a {
+    margin-bottom: 30px; 
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.shop-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shop-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; 
+    margin-top: 15px;
+}
+
+/* OVERRIDE: Shop labels are plain by default */
+.shop-item .event-label {
+    background: transparent;
+    color: black;
+    margin-bottom: 0;
+    transition: background 0.1s ease, color 0.1s ease;
+}
+
+/* HOVER EFFECT: Only title highlights */
+.shop-item:hover .event-label {
+    background: black;
+    color: white;
+}
+
+.shop-desc {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* ======================================
+    FOOTER (DESKTOP)
+====================================== */
+.footer {
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    z-index: 50;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+#footer-logo {
+    width: 80px;
+    height: auto;
+}
+
+.bottom-square-left {
+    left: var(--square-width);
+    position: absolute;
+    bottom: var(--vertical-spacing);
+}
+.bottom-square-right {
+    right: var(--square-width);
+    position: absolute;
+    bottom: var(--vertical-spacing);
+}
+
+.review-link {
+    color: #0000EE;
+    text-decoration: underline;
+}
+.review-link:hover {
+    color: #66A3FF;
+}
+
+/* ======================================
+    MOBILE (max-width: 900px)
+====================================== */
+@media (max-width: 900px) {
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+        width: 100%;
+    }
+
+    .nav {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .nav nav {
+        width: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        box-sizing: border-box;
+    }
+
+    .content {
+        position: static;
+        margin: 30px 20px 100px;
+        padding: 0;
+        width: calc(100% - 40px);
+        text-align: left;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    .center-block {
+        width: 100%;
+        text-align: left;
+    }
+
+    .shop-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .release-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    .release-list li .text {
+        display: block;
+        width: 100%;
+    }
+
+    #event-preview {
+        position: static !important;
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+        transform: none !important;
+        padding-bottom: 0;
+    }
+
+    .preview-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+        max-height: none;
+        overflow: visible;
+        padding-right: 0;
+    }
+
+    .preview-box img {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 20px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 50;
+        background: none;
+    }
+
+    .bottom-square {
+        position: fixed;
+        bottom: 20px;
+        width: 10px !important;
+        height: 10px !important;
+        font-size: 11px !important;
+        line-height: 10px !important;
+        z-index: 50;
+    }
+
+    .bottom-square-left { left: 20px; }
+    .bottom-square-right { right: 20px; }
+}
+@media (max-width: 900px) {
+    /* 1. Control the vertical gap between the items */
+    .shop-gallery {
+        gap: 20px; /* Reduced from 40px - change this value to suit */
+        justify-content: center;
+    }
+
+    /* 2. Remove the large bottom margin you had on desktop links */
+    .shop-item a {
+        margin-bottom: 10px; /* Reduced from 30px */
+    }
+
+    /* 3. Tighten the space between the image and the text */
+    .shop-text-content {
+        margin-top: 10px; /* Reduced from 15px */
+        gap: 4px;        /* Space between Title and Description */
+    }
+}

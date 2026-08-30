@@ -1,0 +1,49 @@
+﻿</span></span>
+                </li>
+                            <li>
+                    <span class="bullet">▮</span>
+                    <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/kelman.duran/?hl=en">KELMAN DURAN</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rancapduoi/?hl=en">RẮN CẠP ĐUÔI</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/holodec_/?hl=en">HOLODEC</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/yikii_tong/?hl=en">YIKII</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/qura_kw__/">KENT WATARI</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www-fallback.instagram.com/ans_._m/">ANS M</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/fausto.mercier/">FAUSTO MERCIER</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://instagram.com/pietrobardini/">PIETRO BARDINI</a></span>
+                            </li>
+                            <li>
+                                <span class="bullet">▮</span>
+                                <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://instagram.com/jonaspequeno/">ONAS UENO</a></span>
+                            </li>
+                            <li class="epk-spacer">
+                                <span class="bullet">▮</span>
+                    <span class="text clickable"><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/alexandersnout/">CASTLE MAOL</a></span>
+                </li>
+            </br>
+
+            
+            
+                <li class="title-row">
+                    <span class="bullet">▮</span>
+                    <span class="text"><span class="event-label">
